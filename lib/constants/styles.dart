@@ -18,3 +18,15 @@ final kTextStyle = TextStyle(
   fontSize: 18.sp,
   color: kGreyColor,
 );
+
+final kWhiteText = TextStyle(
+    fontFamily: "CircularMedium",
+    fontSize: 16.sp,
+    color: Colors.white,
+    fontWeight: FontWeight.bold);
+
+final kBlueText = TextStyle(
+    fontFamily: "CircularMedium",
+    fontSize: 16.sp,
+    color: kBlueColor,
+    fontWeight: FontWeight.bold);
