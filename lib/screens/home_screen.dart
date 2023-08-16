@@ -23,9 +23,10 @@ class HomScreen extends StatelessWidget {
           child: Column(
             children: [
               CustomAppBar(),
+
               CustomTabs(),
-              UpdatesTab(),
-              //StraightTab(),
+              //UpdatesTab(),
+              StraightTab(),
               CustomGambleText(),
             ],
           ),

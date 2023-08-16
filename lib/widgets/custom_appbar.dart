@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:jock_sports_app/screens/profile_screen.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key? key}) : super(key: key);
@@ -37,12 +38,18 @@ class CustomAppBar extends StatelessWidget {
                   width: 5.w,
                 ),
                 Expanded(
-                  child: Text("MR_CHUCK",
-                      overflow: TextOverflow.ellipsis,
-                      style: kTextStyle.copyWith(
-                          color: Colors.white,
-                          fontSize: 11.5.sp,
-                          fontWeight: FontWeight.bold)),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => ProfileScreen()));
+                    },
+                    child: Text("MR_CHUCK",
+                        overflow: TextOverflow.ellipsis,
+                        style: kTextStyle.copyWith(
+                            color: Colors.white,
+                            fontSize: 11.5.sp,
+                            fontWeight: FontWeight.bold)),
+                  ),
                 )
               ],
             ),

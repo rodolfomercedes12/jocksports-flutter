@@ -28,6 +28,19 @@ class StraightTab extends StatelessWidget {
               ),
               iconColor: kGreenColor,
               collapsedIconColor: kRedColor,
+              childrenPadding: EdgeInsets.zero,
+              /*children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Checkbox(
+                      value: false,
+                      onChanged: (val) {},
+                      activeColor: kBlueColor,
+                    ),
+                  ],
+                )
+              ],*/
             ),
             ExpansionTile(
               leading: Icon(
