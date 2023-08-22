@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:jock_sports_app/screens/tabs/history_tab.dart';
 import 'package:jock_sports_app/screens/tabs/straight_tab.dart';
 import 'package:jock_sports_app/screens/tabs/updates_tab.dart';
 import 'package:jock_sports_app/widgets/custom_appbar.dart';
@@ -25,8 +26,9 @@ class HomScreen extends StatelessWidget {
               CustomAppBar(),
 
               CustomTabs(),
+              HistoryTab(),
               //UpdatesTab(),
-              StraightTab(),
+              //StraightTab(),
               CustomGambleText(),
             ],
           ),
