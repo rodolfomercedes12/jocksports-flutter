@@ -20,6 +20,12 @@ final kTextStyle = TextStyle(
   color: kGreyColor,
 );
 
+final kBlackText = TextStyle(
+    fontFamily: "CircularMedium",
+    fontSize: 16.sp,
+    color: Colors.black,
+    fontWeight: FontWeight.bold);
+
 final kWhiteText = TextStyle(
     fontFamily: "CircularMedium",
     fontSize: 16.sp,

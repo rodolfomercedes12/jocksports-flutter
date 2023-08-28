@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:jock_sports_app/screens/bets_confirmed_screen.dart';
 import 'package:jock_sports_app/screens/home_screen.dart';
 import 'package:jock_sports_app/screens/profile_screen.dart';
 import 'package:jock_sports_app/screens/sign_up_screen.dart';
@@ -73,7 +74,7 @@ class LoginScreen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => HomScreen()));
+                                builder: (context) => BetsConfirmedScreen()));
                       },
                       child: Container(
                         width: 137.w,

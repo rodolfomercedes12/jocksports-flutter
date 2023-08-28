@@ -65,9 +65,7 @@ class UpdatesTab extends StatelessWidget {
                           ),
                           Text("12/02/23",
                               style: kTextStyle.copyWith(
-                                  fontSize: 13.sp,
-                                  color: Color.fromRGBO(125, 129, 140, 1.0)
-                                      .withOpacity(0.7))),
+                                  fontSize: 13.sp, color: kGreyLight)),
                           Padding(
                             padding: EdgeInsets.only(right: 8.w),
                             child: Text(
