@@ -9,8 +9,8 @@ import 'package:jock_sports_app/widgets/custom_appbar.dart';
 import 'package:jock_sports_app/widgets/custom_gamble_text.dart';
 import 'package:jock_sports_app/widgets/custom_tabs.dart';
 
-class HomScreen extends StatelessWidget {
-  HomScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  HomeScreen({Key? key}) : super(key: key);
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -27,7 +27,7 @@ class HomScreen extends StatelessWidget {
               CustomAppBar(),
 
               CustomTabs(),
-              //HistoryTab(),
+              HistoryTab(),
               //UpdatesTab(),
               //StraightTab(),
               //BetsConfirmedScreen(),

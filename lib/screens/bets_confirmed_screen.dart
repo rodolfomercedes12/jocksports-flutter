@@ -20,13 +20,18 @@ class BetsConfirmedScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "X",
-                      style: TextStyle(
-                          color: kRedColor,
-                          // fontFamily: "CircularMedium",
-                          fontSize: 35.sp,
-                          fontWeight: FontWeight.bold),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(
+                        "X",
+                        style: TextStyle(
+                            color: kRedColor,
+                            // fontFamily: "CircularMedium",
+                            fontSize: 35.sp,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                     Text(
                       "BETS CONFIRMED",
