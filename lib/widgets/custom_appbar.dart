@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jock_sports_app/constants/constants.dart';
 import 'package:jock_sports_app/constants/styles.dart';
 import 'package:jock_sports_app/screens/profile_screen.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({Key? key}) : super(key: key);
+  GlobalKey<ScaffoldState> drawerKey;
+
+  CustomAppBar(this.drawerKey);
 
   @override
   Widget build(BuildContext context) {
@@ -82,10 +85,16 @@ class CustomAppBar extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(right: 3.w),
-            child: Icon(
-              Icons.menu,
-              color: kGreyColor,
-              size: 40.sp,
+            child: GestureDetector(
+              onTap: () {
+                print("open drawer");
+                AppConstants.scaffoldKeyGlobal.currentState!.openDrawer();
+              },
+              child: Icon(
+                Icons.menu,
+                color: kGreyColor,
+                size: 40.sp,
+              ),
             ),
           )
         ],
