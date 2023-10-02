@@ -19,14 +19,19 @@ class ProfileScreen extends StatelessWidget {
             child: Column(
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(right: 20.w),
-                      child: Icon(
-                        Icons.arrow_forward_ios,
-                        color: kGreyColor,
-                        size: 40.sp,
+                      padding: EdgeInsets.only(left: 20.w),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          color: kGreyColor,
+                          size: 40.sp,
+                        ),
                       ),
                     )
                   ],

@@ -41,6 +41,8 @@ dependencies:
   firebase_core: ^1.12.0
   get: ^4.5.0
   flutter_svg: ^1.0.3
+  panara_dialogs: ^0.1.4
+  awesome_dialog: ^3.0.0
 
 dev_dependencies:
   flutter_test:

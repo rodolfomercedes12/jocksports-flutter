@@ -1,7 +1,12 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
 import 'package:jock_sports_app/screens/place_bet_screen.dart';
+import 'package:jock_sports_app/widgets/bet_list.dart';
+import 'package:jock_sports_app/widgets/bet_list_dialog.dart';
+import 'package:jock_sports_app/widgets/bet_results_dialog.dart';
+import 'package:panara_dialogs/panara_dialogs.dart';
 
 class CustomTabs extends StatefulWidget {
   CustomTabs({Key? key}) : super(key: key);
@@ -43,7 +48,44 @@ class _CustomTabsState extends State<CustomTabs> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => PlaceBetScreen()));
+                        builder: (context) => PlaceBetScreen(),
+                      ));
+                } else if (currentIndex == 1) {
+                  /*showDialog(
+                      context: context,
+                      builder: (context) {
+                        return BetResultsDialog();
+                      });*/
+                  /*PanaraInfoDialog.show(
+                    context,
+                    title: "Hello",
+                    message: "This is the PanaraInfoDialog",
+                    buttonText: "Okay",
+                    color: kBlueColor,
+                    //imagePath: "assets/images/jock_sports_logo.png",
+                    onTapDismiss: () {
+                      Navigator.pop(context);
+                    },
+                    panaraDialogType: PanaraDialogType.custom,
+                    barrierDismissible:
+                        false, // optional parameter (default is true)
+                  );*/
+                  AwesomeDialog(
+                    context: context,
+                    dialogType: DialogType.noHeader,
+                    customHeader: Image.asset(
+                      "assets/images/jock_sports_logo.png",
+                      width: 100.w,
+                      height: 100.h,
+                    ),
+                    animType: AnimType.rightSlide,
+                    title: 'Screen Not Available',
+                    titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
+                    desc: 'Sorry, this screen is not available yet.',
+                    btnOkColor: kBlueColor,
+                    btnCancelOnPress: () {},
+                    btnOkOnPress: () {},
+                  )..show();
                 }
               }),
               child: Container(

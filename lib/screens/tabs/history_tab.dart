@@ -248,26 +248,7 @@ class HistoryTab extends StatelessWidget {
                       ),
                     )
                   ],
-                )
-                /*Stack(
-                fit: StackFit.expand,
-                overflow: Overflow.visible,
-                children: [
-                  Positioned(
-                    top: -80.h,
-                    left: 105.w,
-                    child: Image.asset(
-                      "assets/images/jock_sports_logo.png",
-                      width: 170.w,
-                      height: 170.h,
-                    ),
-                  ),
-                  Positioned(
-                    child: Text("YOUR YEAR STATS", style: kBlueText),
-                    )
-                ],
-              ),*/
-                ),
+                )),
           )
         ],
       ),

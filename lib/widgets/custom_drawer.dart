@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:jock_sports_app/screens/login_screen.dart';
+import 'package:jock_sports_app/screens/place_bet_screen.dart';
+import 'package:jock_sports_app/screens/profile_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -31,7 +34,7 @@ class CustomDrawer extends StatelessWidget {
               leading: Icon(Icons.home, color: Colors.white),
               title: Text('Home', style: kWhiteText),
               onTap: () {
-                // Acción a realizar cuando se toca la opción "Inicio"
+                Navigator.pop(context);
               },
             ),
             SizedBox(
@@ -51,6 +54,9 @@ class CustomDrawer extends StatelessWidget {
               leading: Icon(Icons.casino_outlined, color: Colors.white),
               title: Text('Bet Live', style: kWhiteText),
               onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PlaceBetScreen()));
                 // Acción a realizar cuando se toca la opción "Configuración"
               },
             ),
@@ -61,7 +67,9 @@ class CustomDrawer extends StatelessWidget {
               leading: Icon(Icons.person, color: Colors.white),
               title: Text('Profile', style: kWhiteText),
               onTap: () {
-                // Acción a realizar cuando se toca la opción "Configuración"
+                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProfileScreen()));
               },
             ),
             SizedBox(
@@ -91,6 +99,9 @@ class CustomDrawer extends StatelessWidget {
               leading: Icon(Icons.exit_to_app, color: Colors.white),
               title: Text('Sign Out', style: kWhiteText),
               onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()));
                 // Acción a realizar cuando se toca la opción "Cerrar Sesión"
               },
             ),
