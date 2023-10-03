@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
@@ -72,6 +73,18 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
+                        /*AwesomeDialog(
+                          context: context,
+                          dialogType: DialogType.error,
+                         
+                          animType: AnimType.rightSlide,
+                          title: 'Wrong credentials',
+                          titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
+                          desc: 'Wrong email or password, please try again.',
+                          btnOkColor: kBlueColor,
+                          btnCancelOnPress: () {},
+                          btnOkOnPress: () {},
+                        )..show();*/
                         Navigator.push(
                             context,
                             MaterialPageRoute(

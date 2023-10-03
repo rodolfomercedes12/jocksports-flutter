@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
@@ -134,10 +135,21 @@ class PlaceBetScreen extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
+                  AwesomeDialog(
+                    context: context,
+                    dialogType: DialogType.success,
+                    animType: AnimType.rightSlide,
+                    title: 'Are you sure you want to bet?',
+                    titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
+                    desc: 'If you accept the bet will be confirmed.',
+                    //btnOkColor:
+                    btnCancelOnPress: () {},
+                    btnOkOnPress: () {},
+                  )..show();
+                  /*Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => BetsConfirmedScreen()));
+                          builder: (context) => BetsConfirmedScreen()));*/
                 },
                 child: Container(
                   width: 185.w,
