@@ -136,15 +136,38 @@ class PlaceBetScreen extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   AwesomeDialog(
+                    dismissOnTouchOutside: false,
+                    dialogBorderRadius: BorderRadius.circular(30.r),
                     context: context,
-                    dialogType: DialogType.success,
+                    dialogType: DialogType.question,
+                    customHeader:
+                        Image.asset("assets/images/jock_sports_logo.png"),
                     animType: AnimType.rightSlide,
                     title: 'Are you sure you want to bet?',
                     titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
                     desc: 'If you accept the bet will be confirmed.',
                     //btnOkColor:
                     btnCancelOnPress: () {},
-                    btnOkOnPress: () {},
+                    btnOkOnPress: () {
+                      AwesomeDialog(
+                        dismissOnTouchOutside: false,
+                        dialogBorderRadius: BorderRadius.circular(30.r),
+                        context: context,
+                        dialogType: DialogType.success,
+                        animType: AnimType.rightSlide,
+                        title: 'CONGRATULATIONS',
+                        titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
+                        desc: 'Your bet has been confirmed, Good luck!.',
+                        //btnOkColor:
+                        //btnCancelOnPress: () {},
+                        btnOkOnPress: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => BetsConfirmedScreen()));
+                        },
+                      )..show();
+                    },
                   )..show();
                   /*Navigator.push(
                       context,
