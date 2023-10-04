@@ -45,11 +45,27 @@ class _CustomTabsState extends State<CustomTabs> {
                   currentIndex = index;
                 });
                 if (currentIndex == 3) {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PlaceBetScreen(),
-                      ));
+                  AwesomeDialog(
+                      dismissOnTouchOutside: false,
+                      dialogBorderRadius: BorderRadius.circular(30.r),
+                      context: context,
+                      dialogType: DialogType.warning,
+                      animType: AnimType.rightSlide,
+                      title: 'Warning',
+                      titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
+                      desc:
+                          'Are you sure you want to Bet Live? Before betting please check our Terms. ',
+                      btnOkColor: kBlueColor,
+                      btnCancelOnPress: () {},
+                      btnOkOnPress: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PlaceBetScreen(),
+                            ));
+                      },
+                      btnOkText: "Bet now")
+                    ..show();
                 } else if (currentIndex == 1) {
                   /*showDialog(
                       context: context,
@@ -79,6 +95,7 @@ class _CustomTabsState extends State<CustomTabs> {
                       height: 100.h,
                     ),
                     animType: AnimType.rightSlide,
+                    dialogBorderRadius: BorderRadius.circular(30.r),
                     title: 'Screen Not Available',
                     titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
                     desc: 'Sorry, this screen is not available yet.',

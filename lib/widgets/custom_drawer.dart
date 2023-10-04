@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:jock_sports_app/screens/faq_screen.dart';
 import 'package:jock_sports_app/screens/login_screen.dart';
+import 'package:jock_sports_app/screens/notification_screen.dart';
 import 'package:jock_sports_app/screens/place_bet_screen.dart';
 import 'package:jock_sports_app/screens/profile_screen.dart';
 
@@ -44,6 +46,11 @@ class CustomDrawer extends StatelessWidget {
               leading: Icon(Icons.notifications, color: Colors.white),
               title: Text('Notifications', style: kWhiteText),
               onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => NotificationScreen()));
                 // Acción a realizar cuando se toca la opción "Configuración"
               },
             ),
@@ -79,6 +86,9 @@ class CustomDrawer extends StatelessWidget {
               leading: Icon(Icons.help, color: Colors.white),
               title: Text('FAQ', style: kWhiteText),
               onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FaqScreen()));
                 // Acción a realizar cuando se toca la opción "Configuración"
               },
             ),

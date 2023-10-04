@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
@@ -177,19 +178,24 @@ class BetList extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Container(
-                        width: 180.w,
-                        height: 40.h,
-                        decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            border: Border.all(
-                                color: Color.fromRGBO(175, 176, 178, 1.0),
-                                width: 1.5.sp),
-                            borderRadius: BorderRadius.circular(10.r)),
-                        child: Center(
-                          child: Text("\$100 ",
-                              style: kTextFieldStyle.copyWith(
-                                  color: kBlueColor, fontSize: 18.sp)),
+                      GestureDetector(
+                        onTap: () {
+                          //
+                        },
+                        child: Container(
+                          width: 180.w,
+                          height: 40.h,
+                          decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              border: Border.all(
+                                  color: Color.fromRGBO(175, 176, 178, 1.0),
+                                  width: 1.5.sp),
+                              borderRadius: BorderRadius.circular(10.r)),
+                          child: Center(
+                            child: Text("\$100 ",
+                                style: kTextFieldStyle.copyWith(
+                                    color: kBlueColor, fontSize: 18.sp)),
+                          ),
                         ),
                       ),
                       SizedBox(

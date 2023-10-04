@@ -146,7 +146,8 @@ class PlaceBetScreen extends StatelessWidget {
                     title: 'Are you sure you want to bet?',
                     titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
                     desc: 'If you accept the bet will be confirmed.',
-                    //btnOkColor:
+                    btnOkColor: kBlueColor,
+                    btnOkText: "Confirm Bet",
                     btnCancelOnPress: () {},
                     btnOkOnPress: () {
                       AwesomeDialog(
