@@ -6,7 +6,6 @@ import 'package:jock_sports_app/screens/place_bet_screen.dart';
 import 'package:jock_sports_app/widgets/bet_list.dart';
 import 'package:jock_sports_app/widgets/bet_list_dialog.dart';
 import 'package:jock_sports_app/widgets/bet_results_dialog.dart';
-import 'package:panara_dialogs/panara_dialogs.dart';
 
 class CustomTabs extends StatefulWidget {
   CustomTabs({Key? key}) : super(key: key);
