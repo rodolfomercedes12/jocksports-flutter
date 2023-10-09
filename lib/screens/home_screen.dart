@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/constants.dart';
 import 'package:jock_sports_app/constants/styles.dart';
 import 'package:jock_sports_app/screens/bets_confirmed_screen.dart';
-import 'package:jock_sports_app/screens/tabs/history_tab.dart';
+import 'package:jock_sports_app/screens/tabs/history_main.dart';
 import 'package:jock_sports_app/screens/tabs/straight_tab.dart';
 import 'package:jock_sports_app/screens/tabs/updates_tab.dart';
 import 'package:jock_sports_app/widgets/custom_appbar.dart';
@@ -31,12 +31,12 @@ class HomeScreen extends StatelessWidget {
               CustomAppBar(AppConstants.scaffoldKeyGlobal),
 
               CustomTabs(),
-              //HistoryTab(),
+              HistoryTab(),
               //UpdatesTab(),
-              StraightTab(),
+              //StraightTab(),
               //BetsConfirmedScreen(),
-              //CustomGambleText(),
-              GameTimeAndContinue()
+              CustomGambleText(),
+              //GameTimeAndContinue()
             ],
           ),
         ),

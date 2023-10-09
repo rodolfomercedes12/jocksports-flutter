@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:jock_sports_app/screens/onboarding_screen.dart';
 import 'package:jock_sports_app/widgets/auth_textfield.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -89,16 +90,24 @@ class RegisterScreen extends StatelessWidget {
                                 color: Colors.black, fontSize: 16.sp)),
                       ),
                     ),*/
-                    Container(
-                      width: 300.w,
-                      height: 50.h,
-                      decoration: BoxDecoration(
-                          color: kRedColor,
-                          borderRadius: BorderRadius.circular(10.r)),
-                      child: Center(
-                        child: Text("REGISTER",
-                            style: kTextFieldStyle.copyWith(
-                                color: Colors.white, fontSize: 17.sp)),
+                    GestureDetector(
+                      onTap: (() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => OnboardingScreen()));
+                      }),
+                      child: Container(
+                        width: 300.w,
+                        height: 50.h,
+                        decoration: BoxDecoration(
+                            color: kRedColor,
+                            borderRadius: BorderRadius.circular(10.r)),
+                        child: Center(
+                          child: Text("REGISTER",
+                              style: kTextFieldStyle.copyWith(
+                                  color: Colors.white, fontSize: 17.sp)),
+                        ),
                       ),
                     ),
                   ],

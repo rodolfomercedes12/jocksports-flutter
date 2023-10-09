@@ -43,6 +43,8 @@ dependencies:
   flutter_svg: ^1.0.3
   awesome_dialog: ^3.0.0
   lottie: ^1.4.2
+  liquid_swipe: ^2.0.0
+  animate_do: ^2.0.0
 
 dev_dependencies:
   flutter_test:
