@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:jock_sports_app/screens/history_week.dart';
 import 'package:jock_sports_app/screens/history_year.dart';
 
 import '../history_day.dart';
@@ -80,14 +81,7 @@ class _HistoryTabState extends State<HistoryTab> {
             Expanded(
               child: TabBarView(children: [
                 HistoryDay(),
-                Container(
-                  //color: Colors.teal,
-                  child: Center(
-                    child: Text(
-                      "Comming Soon...",
-                    ),
-                  ),
-                ),
+                HistoryWeek(),
                 Container(
                   //color: Colors.teal,
                   child: Center(

@@ -34,7 +34,7 @@ class HistoryDay extends StatelessWidget {
     "EAGLES",
     "LIONS",
     "BUCCANEARS",
-    "VIKINGS"
+    "VIKINGS",
   ];
 
   @override
@@ -69,7 +69,7 @@ class HistoryDay extends StatelessWidget {
                           SizedBox(
                             width: 3.w,
                           ),
-                          Text("Oct 6-12",
+                          Text("Oct 10",
                               style: kBlueText.copyWith(fontSize: 15.sp)),
                           Icon(
                             Icons.keyboard_arrow_down,
