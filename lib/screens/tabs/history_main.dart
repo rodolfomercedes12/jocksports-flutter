@@ -22,7 +22,7 @@ class _HistoryTabState extends State<HistoryTab> {
       length: 4,
       child: Container(
         width: double.infinity,
-        height: 490.h,
+        height: 455.h,
         //color: Colors.blue,
         child: Column(
           children: [

@@ -1,7 +1,9 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:jock_sports_app/controllers/app_controller.dart';
 import 'package:jock_sports_app/screens/place_bet_screen.dart';
 import 'package:jock_sports_app/widgets/bet_list.dart';
 import 'package:jock_sports_app/widgets/bet_list_dialog.dart';
@@ -15,6 +17,8 @@ class CustomTabs extends StatefulWidget {
 }
 
 class _CustomTabsState extends State<CustomTabs> {
+  final appController = Get.find<AppController>();
+
   final listLabels = [
     "STRAIGHT",
     "PARLAY",
@@ -41,6 +45,7 @@ class _CustomTabsState extends State<CustomTabs> {
             return GestureDetector(
               onTap: (() {
                 setState(() {
+                  appController.currentTabIndex.value = index;
                   currentIndex = index;
                 });
                 if (currentIndex == 3) {
@@ -65,7 +70,7 @@ class _CustomTabsState extends State<CustomTabs> {
                       },
                       btnOkText: "Bet now")
                     ..show();
-                } else if (currentIndex == 1) {
+                } else if (currentIndex == 1 || currentIndex == 2) {
                   /*showDialog(
                       context: context,
                       builder: (context) {
@@ -99,7 +104,7 @@ class _CustomTabsState extends State<CustomTabs> {
                     titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
                     desc: 'Sorry, this screen is not available yet.',
                     btnOkColor: kBlueColor,
-                    btnCancelOnPress: () {},
+                    //btnCancelOnPress: () {},
                     btnOkOnPress: () {},
                   )..show();
                 }

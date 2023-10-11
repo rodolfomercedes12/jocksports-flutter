@@ -11,7 +11,7 @@ class UpdatesTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 450.h,
+      height: 455.h,
       //color: Colors.blue,
       child: Column(
         children: [
