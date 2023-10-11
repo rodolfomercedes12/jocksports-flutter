@@ -1,8 +1,15 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:lottie/lottie.dart';
 
-class PendingBetsTab extends StatelessWidget {
+class PendingBetsTab extends StatefulWidget {
+  @override
+  State<PendingBetsTab> createState() => _PendingBetsTabState();
+}
+
+class _PendingBetsTabState extends State<PendingBetsTab> {
   List<String> rewardList = [
     "180",
     "0",
@@ -35,6 +42,7 @@ class PendingBetsTab extends StatelessWidget {
     "FALCONS",
     "COLTS",
   ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -72,41 +80,83 @@ class PendingBetsTab extends StatelessWidget {
                       ),
                       Text("TOTAL: ",
                           style: kBlueText.copyWith(fontSize: 16.sp)),
-                      Container(
-                        width: 85.w,
-                        height: 36.h,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Color.fromRGBO(175, 176, 178, 1.0),
-                              width: 1.5.sp),
+                      GestureDetector(
+                        onTap: () {
+                          AwesomeDialog(
+                            context: context,
+                            dialogType: DialogType.noHeader,
+                            customHeader:
+                                Lottie.asset("assets/animations/risk.json"),
+
+                            animType: AnimType.rightSlide,
+                            dialogBorderRadius: BorderRadius.circular(30.r),
+                            title: 'Total Risk Amount',
+                            titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
+                            desc: 'Your total risk amount is \$100 .',
+                            btnOkColor: kBlueColor,
+                            //btnCancelOnPress: () {},
+                            btnOkOnPress: () {},
+                          )..show();
+                        },
+                        child: Container(
+                          width: 85.w,
+                          height: 36.h,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                color: Color.fromRGBO(175, 176, 178, 1.0),
+                                width: 1.5.sp),
+                          ),
+                          child: Center(
+                              child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "\$100",
+                                style: kRedText.copyWith(fontSize: 14.sp),
+                              ),
+                            ],
+                          )),
                         ),
-                        child: Center(
-                            child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "\$100",
-                              style: kRedText.copyWith(fontSize: 14.sp),
-                            ),
-                          ],
-                        )),
                       ),
-                      Container(
-                        width: 85.w,
-                        height: 36.h,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Color.fromRGBO(175, 176, 178, 1.0),
-                              width: 1.5.sp),
+                      GestureDetector(
+                        onTap: () {
+                          AwesomeDialog(
+                            context: context,
+                            dialogType: DialogType.success,
+                            /*customHeader: Image.asset(
+                              "assets/images/jock_sports_logo.png",
+                              width: 100.w,
+                              height: 100.h,
+                            ),*/
+
+                            animType: AnimType.rightSlide,
+                            dialogBorderRadius: BorderRadius.circular(30.r),
+                            title: 'Total Reward',
+                            titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
+                            desc:
+                                'Congratulations! Your total reward is \$905 .',
+                            btnOkColor: kBlueColor,
+                            //btnCancelOnPress: () {},
+                            btnOkOnPress: () {},
+                          )..show();
+                        },
+                        child: Container(
+                          width: 85.w,
+                          height: 36.h,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                color: Color.fromRGBO(175, 176, 178, 1.0),
+                                width: 1.5.sp),
+                          ),
+                          child: Center(
+                              child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("\$905",
+                                  style: kGreenText.copyWith(fontSize: 15.sp)),
+                            ],
+                          )),
                         ),
-                        child: Center(
-                            child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("\$905",
-                                style: kGreenText.copyWith(fontSize: 15.sp)),
-                          ],
-                        )),
                       ),
                     ],
                   ),
