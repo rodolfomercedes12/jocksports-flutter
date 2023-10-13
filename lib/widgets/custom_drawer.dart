@@ -7,6 +7,8 @@ import 'package:jock_sports_app/screens/notification_screen.dart';
 import 'package:jock_sports_app/screens/place_bet_screen.dart';
 import 'package:jock_sports_app/screens/profile_screen.dart';
 
+import '../screens/my_bets_sreen.dart';
+
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
 
@@ -77,6 +79,18 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ProfileScreen()));
+              },
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            ListTile(
+              leading: Icon(Icons.attach_money_rounded, color: Colors.white),
+              title: Text('My Bets', style: kWhiteText),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyBetsScreen()));
               },
             ),
             SizedBox(

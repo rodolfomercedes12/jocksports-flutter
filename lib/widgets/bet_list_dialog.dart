@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:jock_sports_app/models/bet_results_model.dart';
 
 class BetListDialog extends StatelessWidget {
-  const BetListDialog({Key? key}) : super(key: key);
+  List<BetResult> listResults;
+
+  BetListDialog(this.listResults);
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 3,
+        itemCount: listResults.length,
         itemBuilder: (context, index) {
           return Container(
               margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 7.h),
               width: 200,
-              height: 130.h,
+              height: 155.h, //130.h,
               decoration: BoxDecoration(
                 color: Colors.white, //Color(0xff122B48),
                 borderRadius: BorderRadius.circular(8.r),
@@ -38,7 +41,7 @@ class BetListDialog extends StatelessWidget {
                         children: [
                           Center(
                             child: Text(
-                              "VIKINGS -8 VS. LIONS",
+                              listResults[index].betTitle,
                               style: kWhiteText.copyWith(fontSize: 11.sp),
                             ),
                           ),
@@ -64,13 +67,13 @@ class BetListDialog extends StatelessWidget {
                         Container(
                           width: 120.w,
                           height: 35.h,
-                          color: Color.fromRGBO(57, 27, 116, 1),
+                          color: this.listResults[index].teamOneColor,
                           child: Row(
                             children: [
                               Image.asset(
-                                "assets/images/vikings.png",
-                                width: 55.w,
-                                height: 55.h,
+                                listResults[index].teamOneImg,
+                                width: 46.w,
+                                height: 46.h,
                               ),
                               Text("VIKINGS",
                                   style: kWhiteText.copyWith(fontSize: 11.sp))
@@ -92,17 +95,17 @@ class BetListDialog extends StatelessWidget {
                           child: Container(
                             width: 175.w,
                             height: 35.h,
-                            color: Color.fromRGBO(24, 96, 173, 1),
+                            color: listResults[index].teamTwoColor,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
-                                Text("LIONS",
+                                Text(listResults[index].teamTwoName,
                                     style:
                                         kWhiteText.copyWith(fontSize: 11.sp)),
                                 Image.asset(
-                                  "assets/images/lions4.png",
-                                  width: 55.w,
-                                  height: 55.h,
+                                  listResults[index].teamTwoImg,
+                                  width: 46.w,
+                                  height: 46.h,
                                 ),
                               ],
                             ),
@@ -126,7 +129,7 @@ class BetListDialog extends StatelessWidget {
                           text: TextSpan(
                             children: [
                               TextSpan(
-                                text: 'YOUR BET:',
+                                text: 'YOUR BET: ',
                                 style: TextStyle(
                                   color: Color.fromRGBO(175, 176, 178, 1.0),
                                   fontSize: 13.sp,
@@ -135,7 +138,7 @@ class BetListDialog extends StatelessWidget {
                                 ),
                               ),
                               TextSpan(
-                                text: ' VIKINGS',
+                                text: listResults[index].userBetTeam,
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 12.sp,
@@ -166,7 +169,8 @@ class BetListDialog extends StatelessWidget {
                                   SizedBox(
                                     width: 3.w,
                                   ),
-                                  Text("-8 -110", style: kBlackText),
+                                  Text(listResults[index].betNumbers,
+                                      style: kBlackText),
                                 ],
                               )),
                             ),
@@ -178,6 +182,28 @@ class BetListDialog extends StatelessWidget {
                   SizedBox(
                     height: 10.h,
                   ),
+                  Expanded(
+                    child: Container(
+                      width: double.infinity,
+                      height: 30.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(8.r),
+                            bottomRight: Radius.circular(8.r)),
+                        color: listResults[index].betStatus == "win"
+                            ? kGreenColor
+                            : kRedColor,
+                      ),
+                      child: Center(
+                        child: Text(
+                          listResults[index].betStatus == "win"
+                              ? "¡YOU WON!"
+                              : "YOU LOST",
+                          style: kWhiteText,
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ));
         });
