@@ -36,11 +36,11 @@ class MoreBetsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      itemCount: 4,
       itemBuilder: ((context, index) {
         return Container(
           width: double.infinity,
           height: 150.h,
-          //color: Colors.teal,
           child: Flex(
             direction: Axis.vertical,
             children: [
@@ -121,6 +121,9 @@ class MoreBetsList extends StatelessWidget {
                       ],
                     )),
               ),
+
+              //==================1RST TEAM PROPS================
+
               Expanded(
                 flex: 2,
                 child: Container(
@@ -181,15 +184,48 @@ class MoreBetsList extends StatelessWidget {
                               Expanded(
                                   flex: 1,
                                   child: Container(
-                                    alignment: Alignment.topCenter,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: kGreenColor, width: 2.sp)),
-                                    child: Text(
-                                      "-110",
-                                      style: kBlueText,
-                                    ),
-                                  )),
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                      // alignment: Alignment.topCenter,
+                                      decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: kGreenColor, width: 2.sp)),
+                                      child: Flex(
+                                        direction: Axis.horizontal,
+                                        children: [
+                                          Expanded(
+                                              flex: 3,
+                                              child: Container(
+                                                child: Stack(
+                                                  children: [
+                                                    Positioned(
+                                                      top: 0,
+                                                      left: 30.w,
+                                                      child: Text(
+                                                        "-110",
+                                                        style: kBlueText,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              )),
+                                          Expanded(
+                                              flex: 1,
+                                              child: Container(
+                                                color: kGreenColor,
+                                                child: RotatedBox(
+                                                  quarterTurns: -1,
+                                                  child: Center(
+                                                    child: Text("OVER",
+                                                        style:
+                                                            kWhiteText.copyWith(
+                                                                fontSize:
+                                                                    11.sp)),
+                                                  ),
+                                                ),
+                                              ))
+                                        ],
+                                      ))),
                             ],
                           ),
                         ),
@@ -286,32 +322,68 @@ class MoreBetsList extends StatelessWidget {
                                       decoration: BoxDecoration(
                                           border: Border.all(
                                               color: kRedColor, width: 2.sp)),
-                                      child: Stack(
-                                        overflow: Overflow.visible,
+                                      child: Flex(
+                                        direction: Axis.horizontal,
                                         children: [
-                                          Positioned(
-                                            bottom: 0,
-                                            left: 30.w,
-                                            child: Text(
-                                              "-110",
-                                              style: kBlueText,
-                                            ),
-                                          ),
-                                          Positioned(
-                                              top: -20,
-                                              left: 18.w,
+                                          Expanded(
+                                              flex: 3,
                                               child: Container(
-                                                width: 55.w,
-                                                height: 35.h,
-                                                decoration: BoxDecoration(
-                                                    color: Colors.white,
-                                                    border: Border.all(
-                                                        color: kBlueColor,
-                                                        width: 1.5.sp)),
-                                                child: Center(
-                                                  child: Text(
-                                                    "45",
-                                                    style: kBlueText,
+                                                child: Stack(
+                                                  overflow: Overflow.visible,
+                                                  children: [
+                                                    Positioned(
+                                                      bottom: 0,
+                                                      left: 30.w,
+                                                      child: Text(
+                                                        "-110",
+                                                        style: kBlueText,
+                                                      ),
+                                                    ),
+                                                    Positioned(
+                                                        top: -20,
+                                                        left: 18.w,
+                                                        child: Container(
+                                                          width: 45.w, //55
+                                                          height: 25.h, //35
+                                                          decoration: BoxDecoration(
+                                                              color:
+                                                                  Colors.white,
+                                                              border: Border.all(
+                                                                  color:
+                                                                      kBlueColor,
+                                                                  width:
+                                                                      1.5.sp)),
+                                                          child: Center(
+                                                            child: Text(
+                                                              "45",
+                                                              style: kBlueText,
+                                                            ),
+                                                          ),
+                                                        )),
+                                                    /* Positioned(
+                                              right: 0,
+                                              child: Container(
+                                                height: 45.h,
+                                                width: 20.w,
+                                                color: kRedColor,
+                                              ))*/
+                                                  ],
+                                                ),
+                                              )),
+                                          Expanded(
+                                              flex: 1,
+                                              child: Container(
+                                                width: double.infinity,
+                                                height: double.infinity,
+                                                color: kRedColor,
+                                                child: RotatedBox(
+                                                  quarterTurns: -1,
+                                                  child: Center(
+                                                    child: Text("UNDER",
+                                                        style:
+                                                            kWhiteText.copyWith(
+                                                                fontSize:
+                                                                    11.sp)),
                                                   ),
                                                 ),
                                               ))
