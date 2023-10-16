@@ -7,6 +7,7 @@ import 'package:jock_sports_app/constants/styles.dart';
 import 'package:jock_sports_app/screens/bets_confirmed_screen.dart';
 import 'package:jock_sports_app/screens/home_screen.dart';
 import 'package:jock_sports_app/screens/place_bet_screen.dart';
+import 'package:jock_sports_app/screens/player_props.dart';
 import 'package:jock_sports_app/screens/profile_screen.dart';
 import 'package:jock_sports_app/screens/sign_up_screen.dart';
 import 'package:jock_sports_app/widgets/auth_textfield.dart';
@@ -88,7 +89,7 @@ class LoginScreen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => HomeScreen()));
+                                builder: (context) => PlayerPropsScreen()));
                       },
                       child: Container(
                         width: 137.w,

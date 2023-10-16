@@ -7,7 +7,7 @@ import 'package:jock_sports_app/screens/notification_screen.dart';
 import 'package:jock_sports_app/screens/place_bet_screen.dart';
 import 'package:jock_sports_app/screens/profile_screen.dart';
 
-import '../screens/my_bets_sreen.dart';
+import '../screens/my_bets_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({Key? key}) : super(key: key);
@@ -110,7 +110,10 @@ class CustomDrawer extends StatelessWidget {
               height: 10.h,
             ),
             ListTile(
-              leading: Icon(Icons.settings, color: Colors.white),
+              leading: Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
               title: Text('Settings', style: kWhiteText),
               onTap: () {
                 // Acción a realizar cuando se toca la opción "Configuración"
