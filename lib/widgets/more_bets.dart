@@ -3,6 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
 
 class MoreBetsList extends StatelessWidget {
+  bool isPlayerProps;
+
+  MoreBetsList({this.isPlayerProps = false});
+
   List<String> teamImages = [
     "assets/images/vikings.png",
     "assets/images/eagles.png",
@@ -33,6 +37,13 @@ class MoreBetsList extends StatelessWidget {
     "COLTS",
   ];
 
+  List<String> listPropsActions = [
+    "  Pass Completions",
+    "  Pass Attempts",
+    "  Interceptions",
+    "  Passing Yards",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -54,31 +65,45 @@ class MoreBetsList extends StatelessWidget {
                       direction: Axis.horizontal,
                       children: [
                         Expanded(
-                            flex: 2,
+                            flex: isPlayerProps ? 3 : 2,
                             child: Container(
                               //color: Colors.brown,
                               width: double.infinity,
                               height: double.infinity,
-                              child: CustomPaint(
-                                painter: BoxPainter(),
-                                child: Padding(
-                                  padding: EdgeInsets.only(left: 5.w),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.add,
-                                        color: kBlueColor,
-                                        size: 15.sp,
+                              //color: Colors.red,
+                              child: isPlayerProps
+                                  ? Padding(
+                                      padding: EdgeInsets.only(left: 8.w),
+                                      child: Row(
+                                        children: [
+                                          Text("MUST START FOR ACTION",
+                                              style: TextStyle(
+                                                  color: kBlueColor,
+                                                  fontWeight: FontWeight.normal,
+                                                  fontSize: 11.sp))
+                                        ],
                                       ),
-                                      Text(
-                                        "MORE BETS",
-                                        style:
-                                            kBlueText.copyWith(fontSize: 13.sp),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
+                                    )
+                                  : CustomPaint(
+                                      painter: BoxPainter(),
+                                      child: Padding(
+                                        padding: EdgeInsets.only(left: 5.w),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                              Icons.add,
+                                              color: kBlueColor,
+                                              size: 15.sp,
+                                            ),
+                                            Text(
+                                              "MORE BETS",
+                                              style: kBlueText.copyWith(
+                                                  fontSize: 13.sp),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
                             )),
                         Expanded(
                             flex: 4,
@@ -90,9 +115,11 @@ class MoreBetsList extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     Text("(LIVE) 7:20 PM CST ",
-                                        style: index % 2 == 0
-                                            ? kRedText
-                                            : kGreenText),
+                                        style: isPlayerProps
+                                            ? kGreenText
+                                            : index % 2 == 0
+                                                ? kRedText
+                                                : kGreenText),
                                     SizedBox(
                                       width: 4.w,
                                     ),
@@ -101,17 +128,21 @@ class MoreBetsList extends StatelessWidget {
                                         Icon(
                                           Icons.tv,
                                           size: 16.sp,
-                                          color: index % 2 == 0
-                                              ? kRedColor
-                                              : kGreenColor,
+                                          color: isPlayerProps
+                                              ? kGreenColor
+                                              : index % 2 == 0
+                                                  ? kRedColor
+                                                  : kGreenColor,
                                         ),
                                         SizedBox(
                                           width: 4.w,
                                         ),
                                         Text("NFL",
-                                            style: index % 2 == 0
-                                                ? kRedText
-                                                : kGreenText),
+                                            style: isPlayerProps
+                                                ? kGreenText
+                                                : index % 2 == 0
+                                                    ? kRedText
+                                                    : kGreenText),
                                       ],
                                     )
                                   ],
@@ -138,19 +169,27 @@ class MoreBetsList extends StatelessWidget {
                           child: Row(
                             children: [
                               Image.asset(
-                                teamImages[index],
-                                width: 55.w,
-                                height: 55.h,
+                                isPlayerProps
+                                    ? "assets/images/dak.png"
+                                    : teamImages[index],
+                                width: isPlayerProps ? 45.w : 55.w,
+                                height: isPlayerProps ? 45.h : 55.h,
                               ),
-                              Text(teamList[index],
-                                  style: kBlueText.copyWith(fontSize: 12.sp)),
+                              Text(
+                                  isPlayerProps
+                                      ? "Dak Prescott"
+                                      : teamList[index],
+                                  style: kBlueText.copyWith(
+                                      fontSize: isPlayerProps ? 14.sp : 12.sp)),
                               SizedBox(
                                 width: 3.w,
                               ),
-                              Text("(5-8)",
-                                  style: kWhiteText.copyWith(
-                                      fontSize: 12.sp,
-                                      color: Color.fromRGBO(52, 58, 74, 1)))
+                              isPlayerProps
+                                  ? SizedBox()
+                                  : Text("(5-8)",
+                                      style: kWhiteText.copyWith(
+                                          fontSize: 12.sp,
+                                          color: Color.fromRGBO(52, 58, 74, 1)))
                             ],
                           ),
                         ),
@@ -168,19 +207,22 @@ class MoreBetsList extends StatelessWidget {
                           child: Flex(
                             direction: Axis.horizontal,
                             children: [
-                              Expanded(
-                                  flex: 1,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: kBlueColor, width: 1.5.sp)),
-                                    child: Center(
-                                      child: Text(
-                                        "-8 -110",
-                                        style: kBlueText,
-                                      ),
-                                    ),
-                                  )),
+                              isPlayerProps
+                                  ? Expanded(flex: 1, child: Container())
+                                  : Expanded(
+                                      flex: 1,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            border: Border.all(
+                                                color: kBlueColor,
+                                                width: 1.5.sp)),
+                                        child: Center(
+                                          child: Text(
+                                            "-8 -110",
+                                            style: kBlueText,
+                                          ),
+                                        ),
+                                      )),
                               Expanded(
                                   flex: 1,
                                   child: Container(
@@ -251,48 +293,65 @@ class MoreBetsList extends StatelessWidget {
                           child: Row(
                             children: [
                               Image.asset(
-                                teamImages[index + 1],
-                                width: 55.w,
-                                height: 55.h,
+                                isPlayerProps
+                                    ? "assets/images/nfl_logo.png"
+                                    : teamImages[index + 1],
+                                width: isPlayerProps ? 35.w : 55.w,
+                                height: isPlayerProps ? 35.h : 55.h,
                               ),
-                              Text(teamList[index + 1],
-                                  style: kBlueText.copyWith(fontSize: 12.sp)),
+                              Text(
+                                  isPlayerProps
+                                      ? listPropsActions[index]
+                                      : teamList[index + 1],
+                                  style: kBlueText.copyWith(
+                                      fontSize: isPlayerProps ? 14.sp : 12.sp,
+                                      fontWeight: isPlayerProps
+                                          ? FontWeight.normal
+                                          : FontWeight.bold)),
                               SizedBox(
                                 width: 3.w,
                               ),
-                              Text("(5-8)",
-                                  style: kWhiteText.copyWith(
-                                      fontSize: 12.sp,
-                                      color: Color.fromRGBO(52, 58, 74, 1)))
+                              isPlayerProps
+                                  ? SizedBox()
+                                  : Text("(5-8)",
+                                      style: kWhiteText.copyWith(
+                                          fontSize: 12.sp,
+                                          color: Color.fromRGBO(52, 58, 74, 1)))
                             ],
                           ),
                         ),
                       ),
-                      Expanded(
-                        flex: 1,
-                        child: Container(
-                          //color: kRedColor,
-                          child: Stack(
-                            overflow: Overflow.visible,
-                            children: [
-                              Positioned(
-                                top: -25.h,
-                                child: Container(
-                                  width: 60.w,
-                                  height: 40.h,
-                                  color:
-                                      index % 2 == 0 ? kRedColor : kGreenColor,
-                                  child: Center(
-                                    child: Text("PROPS",
-                                        style: kWhiteText.copyWith(
-                                            fontSize: 13.sp)),
-                                  ),
+                      isPlayerProps
+                          ? Expanded(
+                              flex: 1,
+                              child: Container(),
+                            )
+                          : Expanded(
+                              flex: 1,
+                              child: Container(
+                                //color: kRedColor,
+                                child: Stack(
+                                  overflow: Overflow.visible,
+                                  children: [
+                                    Positioned(
+                                      top: -25.h,
+                                      child: Container(
+                                        width: 60.w,
+                                        height: 40.h,
+                                        color: index % 2 == 0
+                                            ? kRedColor
+                                            : kGreenColor,
+                                        child: Center(
+                                          child: Text("PROPS",
+                                              style: kWhiteText.copyWith(
+                                                  fontSize: 13.sp)),
+                                        ),
+                                      ),
+                                    )
+                                  ],
                                 ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
+                              ),
+                            ),
                       Expanded(
                         flex: 3,
                         child: Container(
@@ -300,19 +359,22 @@ class MoreBetsList extends StatelessWidget {
                           child: Flex(
                             direction: Axis.horizontal,
                             children: [
-                              Expanded(
-                                  flex: 1,
-                                  child: Container(
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: kBlueColor, width: 1.5.sp)),
-                                    child: Center(
-                                      child: Text(
-                                        "-8 -110",
-                                        style: kBlueText,
-                                      ),
-                                    ),
-                                  )),
+                              isPlayerProps
+                                  ? Expanded(flex: 1, child: Container())
+                                  : Expanded(
+                                      flex: 1,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            border: Border.all(
+                                                color: kBlueColor,
+                                                width: 1.5.sp)),
+                                        child: Center(
+                                          child: Text(
+                                            "-8 -110",
+                                            style: kBlueText,
+                                          ),
+                                        ),
+                                      )),
                               Expanded(
                                   flex: 1,
                                   child: Container(

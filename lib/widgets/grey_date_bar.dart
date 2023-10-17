@@ -17,7 +17,7 @@ class GreyDateBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("WEDNESDAY, OCT, 16",
+            Text("TUESDAY, OCT 17",
                 style: kWhiteText.copyWith(fontSize: 12.sp)),
             Text("MAX: \$2,000", style: kWhiteText.copyWith(fontSize: 12.sp)),
             Text("MAX: \$2,000", style: kWhiteText.copyWith(fontSize: 12.sp))

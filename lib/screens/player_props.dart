@@ -8,8 +8,8 @@ import '../constants/constants.dart';
 import '../widgets/custom_appbar.dart';
 import '../widgets/more_bets.dart';
 
-class TeamPropsScreen extends StatelessWidget {
-  const TeamPropsScreen({Key? key}) : super(key: key);
+class PlayerPropsScreen extends StatelessWidget {
+  const PlayerPropsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +34,11 @@ class TeamPropsScreen extends StatelessWidget {
                     SizedBox(
                       width: 5.w,
                     ),
-                    Text("NFL", style: kBlueText.copyWith(fontSize: 26.sp)),
+                    Text("NFL PLAYER PROPS",
+                        style: kBlueText.copyWith(fontSize: 26.sp)),
                   ],
                 ),
-                Container(
+                /*Container(
                   margin: EdgeInsets.only(right: 9.w),
                   width: 150.w,
                   height: 40.h,
@@ -58,7 +59,7 @@ class TeamPropsScreen extends StatelessWidget {
                           style: kWhiteText.copyWith(fontSize: 14.sp))
                     ],
                   ),
-                )
+                )*/
               ],
             ),
             SizedBox(
@@ -69,7 +70,9 @@ class TeamPropsScreen extends StatelessWidget {
             Expanded(
               child: Container(
                   //color: Colors.blue,
-                  child: MoreBetsList()),
+                  child: MoreBetsList(
+                isPlayerProps: true,
+              )),
             )
           ],
         ),
