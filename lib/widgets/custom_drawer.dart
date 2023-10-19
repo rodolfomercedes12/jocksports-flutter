@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:jock_sports_app/screens/about%20us_screen.dart';
 import 'package:jock_sports_app/screens/faq_screen.dart';
 import 'package:jock_sports_app/screens/login_screen.dart';
 import 'package:jock_sports_app/screens/notification_screen.dart';
@@ -110,6 +111,19 @@ class CustomDrawer extends StatelessWidget {
               height: 10.h,
             ),
             ListTile(
+              leading: Icon(Icons.question_answer, color: Colors.white),
+              title: Text('About us', style: kWhiteText),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AboutUsScreen()));
+                // Acción a realizar cuando se toca la opción "Configuración"
+              },
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            /*ListTile(
               leading: Icon(
                 Icons.settings,
                 color: Colors.white,
@@ -121,7 +135,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             SizedBox(
               height: 10.h,
-            ),
+            ),*/
             ListTile(
               leading: Icon(Icons.exit_to_app, color: Colors.white),
               title: Text('Sign Out', style: kWhiteText),

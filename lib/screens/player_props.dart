@@ -69,10 +69,11 @@ class PlayerPropsScreen extends StatelessWidget {
             GreyDateBar(),
             Expanded(
               child: Container(
-                  //color: Colors.blue,
-                  child: MoreBetsList(
-                isPlayerProps: true,
-              )),
+                //color: Colors.blue,
+                child: MoreBetsList(
+                  isPlayerProps: true,
+                ),
+              ),
             )
           ],
         ),

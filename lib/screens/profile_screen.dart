@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:jock_sports_app/screens/account_screen.dart';
+import 'package:jock_sports_app/screens/faq_screen.dart';
 import 'package:jock_sports_app/screens/login_screen.dart';
+import 'package:jock_sports_app/screens/notification_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -159,12 +162,20 @@ class ProfileScreen extends StatelessWidget {
                     SizedBox(
                       width: 6.w,
                     ),
-                    Text(
-                      "NOTIFICATIONS",
-                      style: kTextStyle.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 21.sp,
+                    GestureDetector(
+                      onTap: (() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => NotificationScreen()));
+                      }),
+                      child: Text(
+                        "NOTIFICATIONS",
+                        style: kTextStyle.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 21.sp,
+                        ),
                       ),
                     ),
                   ],
@@ -179,12 +190,20 @@ class ProfileScreen extends StatelessWidget {
                 SizedBox(
                   height: 24.h,
                 ),
-                Text(
-                  "ACCOUNT",
-                  style: kTextStyle.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 21.sp,
+                GestureDetector(
+                  onTap: (() {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AccountScreen()));
+                  }),
+                  child: Text(
+                    "ACCOUNT",
+                    style: kTextStyle.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 21.sp,
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -197,12 +216,18 @@ class ProfileScreen extends StatelessWidget {
                 SizedBox(
                   height: 24.h,
                 ),
-                Text(
-                  "FAQ",
-                  style: kTextStyle.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 21.sp,
+                GestureDetector(
+                  onTap: (() {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => FaqScreen()));
+                  }),
+                  child: Text(
+                    "FAQ",
+                    style: kTextStyle.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 21.sp,
+                    ),
                   ),
                 ),
                 SizedBox(
