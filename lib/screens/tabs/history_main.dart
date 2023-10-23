@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
+import 'package:jock_sports_app/screens/history_month.dart';
 import 'package:jock_sports_app/screens/history_week.dart';
 import 'package:jock_sports_app/screens/history_year.dart';
 
@@ -22,7 +23,7 @@ class _HistoryTabState extends State<HistoryTab> {
       length: 4,
       child: Container(
         width: double.infinity,
-        height: 455.h,
+        height: 485.h, //485.h for the history month TAB
         //color: Colors.blue,
         child: Column(
           children: [
@@ -82,14 +83,7 @@ class _HistoryTabState extends State<HistoryTab> {
               child: TabBarView(children: [
                 HistoryDay(),
                 HistoryWeek(),
-                Container(
-                  //color: Colors.teal,
-                  child: Center(
-                    child: Text(
-                      "Comming Soon...",
-                    ),
-                  ),
-                ),
+                HistoryMonth(),
                 HistoryYear(),
               ]),
             )

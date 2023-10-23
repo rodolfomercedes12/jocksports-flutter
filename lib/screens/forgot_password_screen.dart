@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jock_sports_app/constants/styles.dart';
 import 'package:jock_sports_app/screens/about%20us_screen.dart';
 import 'package:jock_sports_app/screens/bets_confirmed_screen.dart';
-import 'package:jock_sports_app/screens/forgot_password_screen.dart';
 import 'package:jock_sports_app/screens/home_screen.dart';
 import 'package:jock_sports_app/screens/place_bet_screen.dart';
 import 'package:jock_sports_app/screens/player_props.dart';
@@ -15,8 +14,8 @@ import 'package:jock_sports_app/screens/profile_screen.dart';
 import 'package:jock_sports_app/screens/sign_up_screen.dart';
 import 'package:jock_sports_app/widgets/auth_textfield.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({Key? key}) : super(key: key);
+class ForgotPasswordScreen extends StatelessWidget {
+  ForgotPasswordScreen({Key? key}) : super(key: key);
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -29,9 +28,32 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: 100.h,
+                height: 85.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 20.w),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: kGreyColor,
+                        size: 40.sp,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               Image.asset("assets/images/jock_sports_logo.png"),
+              SizedBox(
+                height: 15.h,
+              ),
+              Text("Reset Password",
+                  style: kWhiteText.copyWith(fontSize: 25.sp)),
               SizedBox(
                 height: 15.h,
               ),
@@ -53,46 +75,6 @@ class LoginScreen extends StatelessWidget {
               ),
               Container(
                 width: 300.w,
-                height: 74.h,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.0.r),
-                ),
-                child: AuthTextField(
-                  controller: passwordController,
-                  text: "PASSWORD",
-                  icon: Icons.lock,
-                  isPassword: true,
-                ),
-              ),
-              SizedBox(
-                height: 8.h,
-              ),
-              Container(
-                width: 300.w,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    GestureDetector(
-                      onTap: (() {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ForgotPasswordScreen()));
-                      }),
-                      child: Text(
-                        "Forgot Password?",
-                        style: kWhiteText.copyWith(fontSize: 13.sp),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              Container(
-                width: 300.w,
                 height: 70.h,
                 //color: Colors.orange,
                 child: Row(
@@ -100,37 +82,35 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        /*AwesomeDialog(
+                        AwesomeDialog(
+                          dismissOnTouchOutside: false,
+                          dialogBorderRadius: BorderRadius.circular(30.r),
                           context: context,
-                          dialogType: DialogType.error,
-                         
+                          dialogType: DialogType.success,
                           animType: AnimType.rightSlide,
-                          title: 'Wrong credentials',
+                          title: 'EMAIL SENT',
                           titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
-                          desc: 'Wrong email or password, please try again.',
-                          btnOkColor: kBlueColor,
-                          btnCancelOnPress: () {},
+                          desc:
+                              'The email has been sent, please check your inbox and follow the steps to reset your password.',
+                          //btnOkColor:
+                          //btnCancelOnPress: () {},
                           btnOkOnPress: () {},
-                        )..show();*/
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomeScreen()));
+                        )..show();
                       },
                       child: Container(
-                        width: 137.w,
+                        width: 300.w,
                         height: 46.h,
                         decoration: BoxDecoration(
                             color: kGreenColor,
                             borderRadius: BorderRadius.circular(10.r)),
                         child: Center(
-                          child: Text("SIGN IN",
+                          child: Text("SEND EMAIL",
                               style: kTextFieldStyle.copyWith(
                                   color: Colors.black, fontSize: 16.sp)),
                         ),
                       ),
                     ),
-                    GestureDetector(
+                    /*GestureDetector(
                       onTap: () {
                         Navigator.push(
                             context,
@@ -149,7 +129,7 @@ class LoginScreen extends StatelessWidget {
                                   color: Colors.white, fontSize: 14.sp)),
                         ),
                       ),
-                    ),
+                    ),*/
                   ],
                 ),
               ),

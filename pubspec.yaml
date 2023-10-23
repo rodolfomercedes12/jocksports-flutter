@@ -45,6 +45,7 @@ dependencies:
   lottie: ^1.4.2
   liquid_swipe: ^2.0.0
   animate_do: ^2.0.0
+  table_calendar: ^3.0.6
 
 dev_dependencies:
   flutter_test:
