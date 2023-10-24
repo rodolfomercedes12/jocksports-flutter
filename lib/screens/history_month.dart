@@ -79,20 +79,23 @@ class _HistoryMonthState extends State<HistoryMonth> {
     setState(() {
       today = day;
     });
-    /*AwesomeDialog(
+
+    AwesomeDialog(
       context: context,
       dialogType: DialogType.noHeader,
-      customHeader: Lottie.asset("assets/animations/risk.json"),
+      customHeader: Lottie.asset("assets/animations/trophy.json"),
 
       animType: AnimType.rightSlide,
       dialogBorderRadius: BorderRadius.circular(30.r),
-      title: 'Total Risk Amount',
+      title: 'October ${today.day} history',
       titleTextStyle: kBlueText.copyWith(fontSize: 20.sp),
-      desc: 'Your total risk amount is \$100 .',
+      desc: 'YOU WON:    \$370 USD  \n YOU LOST:   \$140 USD.',
+      descTextStyle: kBlueText.copyWith(fontSize: 15.sp, color: kGreyColor),
       btnOkColor: kBlueColor,
+
       //btnCancelOnPress: () {},
       btnOkOnPress: () {},
-    )..show();*/
+    )..show();
   }
 
   @override
