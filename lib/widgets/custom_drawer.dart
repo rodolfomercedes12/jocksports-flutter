@@ -7,6 +7,7 @@ import 'package:jock_sports_app/screens/login_screen.dart';
 import 'package:jock_sports_app/screens/notification_screen.dart';
 import 'package:jock_sports_app/screens/place_bet_screen.dart';
 import 'package:jock_sports_app/screens/profile_screen.dart';
+import 'package:jock_sports_app/screens/rating.dart';
 
 import '../screens/my_bets_screen.dart';
 
@@ -117,6 +118,19 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => AboutUsScreen()));
+                // Acción a realizar cuando se toca la opción "Configuración"
+              },
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            ListTile(
+              leading: Icon(Icons.star, color: Colors.white),
+              title: Text('Feedback', style: kWhiteText),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FeedbackScreen()));
                 // Acción a realizar cuando se toca la opción "Configuración"
               },
             ),
