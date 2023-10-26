@@ -55,8 +55,8 @@ class _HomeScreenState extends State<HomeScreen> {
               //StraightTab(),
               //BetsConfirmedScreen(),
               //PendingBetsTab(),
-              CustomGambleText()
-              //GameTimeAndContinue()
+              //CustomGambleText()
+              GameTimeAndContinue()
             ],
           ),
         ),

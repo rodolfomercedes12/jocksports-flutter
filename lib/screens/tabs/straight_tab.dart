@@ -9,7 +9,7 @@ class StraightTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 455
+      height: 550
           .h, //450.h, //550.h // TODO: Change this value depending on showing Gamble bottom Text and Game Continue Text
       //color: Colors.teal,
       child: SingleChildScrollView(
